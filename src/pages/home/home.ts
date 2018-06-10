@@ -1,9 +1,8 @@
 import { ChatProvider } from './../../providers/chat/chat';
 import { AuthProvider } from './../../providers/auth/auth';
 import { UserProvider } from './../../providers/user/user';
-import { SignupPage } from './../signup/signup';
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { User } from '../../models/user.model';
 import { Observable } from 'rxjs/Observable';
 import { ChatPage } from '../chat/chat';
@@ -18,13 +17,16 @@ export class HomePage {
 
   users: Observable<User[]>;
 
+  chats: Observable<Chat[]>;
+
   view: string ='chats';
 
   constructor(
         public authProvider: AuthProvider,
         public navCtrl: NavController,
         public userProvider: UserProvider,
-        public chatProvider: ChatProvider) {
+        public chatProvider: ChatProvider,
+        public menuController: MenuController) {
 
   }
 
@@ -34,16 +36,23 @@ export class HomePage {
 
   ionViewDidLoad(){
 
-    this.users = this.userProvider.users
+    // lista de chats do usuário
+    this.chats = this.chatProvider.mapListKeys<Chat>(this.chatProvider.chats)
+      .map((chats: Chat[]) => chats.reverse());
+
+    // lista de usuário disponível, tirando eu
+    this.users = this.userProvider.users;
+
+    // habilita o menu depois que usuário estiver logado
+    this.menuController.enable(true, 'user-menu');
 
   }
-  onSignup(): void {
-    this.navCtrl.push(SignupPage)
-  }
-
+  // recebe como parâmetro quem está sendo chamdo
+  // cria os chats
   onChatCreate(recipientUser: User): void{
     // chama chat e passa o usuário escolhido para fazer char
     this.userProvider
+      // descobre quem está criando o chat
       .mapObjectKey<User>(this.userProvider.currentUser)
       .first()
       .subscribe((currentUser: User) => {
@@ -55,7 +64,7 @@ export class HomePage {
               console.log('Chat ', chat );
 
               
-            if (!chat.title) {              
+            if (!chat.title) {  // não existe chat entre usuario corrente e receptor            
 
               let timestamp: Object = firebase.database.ServerValue.TIMESTAMP;
 
@@ -74,6 +83,25 @@ export class HomePage {
       this.navCtrl.push(ChatPage, {
       recipientUser: recipientUser
     });
+  }
+
+  // abre os chats
+  onChatOpen(chat: Chat): void {
+
+    let recipientUserId: string = chat.$key;
+    
+    this.userProvider.mapObjectKey<User>(
+      this.userProvider.get(recipientUserId)
+    )
+      .first()
+      .subscribe((user: User) => {        
+
+        this.navCtrl.push(ChatPage, {
+          recipientUser: user
+        });
+
+      });
+
   }
 
   onLogout(): void {
