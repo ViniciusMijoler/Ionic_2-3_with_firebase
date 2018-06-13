@@ -2,12 +2,11 @@ import { BaseService } from '../base.service';
 
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireList, AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
+import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 
 import { Trabalho } from '../../models/trabalho.model';
 
 import * as firebase from 'firebase/app';
-import { DateTime } from 'ionic-angular';
 /*
   Generated class for the TabalhoProvider provider.
 

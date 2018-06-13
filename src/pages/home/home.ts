@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
 import { NavController, MenuController } from 'ionic-angular';
 
 import { Trabalho } from '../../models/trabalho.model';
-import { User } from '../../models/user.model';
 
 import { TrabalhoPage } from '../trabalho/trabalho';
 
