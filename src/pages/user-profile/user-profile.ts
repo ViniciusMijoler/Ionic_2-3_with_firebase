@@ -16,7 +16,10 @@ export class UserProfilePage {
   private filePhoto: File;
   uploadProgress: number;
 
-  constructor(public userProvider: UserProvider, public authProvider: AuthProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public userProvider: UserProvider, 
+              public authProvider: AuthProvider, 
+              public navCtrl: NavController, 
+              public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -62,6 +65,8 @@ export class UserProfilePage {
       .edit({
         name: this.currentUser.name,
         username: this.currentUser.username,
+        telefone: this.currentUser.telefone,
+        cpf: this.currentUser.cpf,
         photo: photoUrl || this.currentUser.photo || ''
       }).then(() => {
         this.canEdit = false;

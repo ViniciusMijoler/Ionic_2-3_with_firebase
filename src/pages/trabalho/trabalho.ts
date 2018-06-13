@@ -28,14 +28,13 @@ export class TrabalhoPage {
     public formBuilder: FormBuilder,
     public loadingCtrl: LoadingController,
     public userProvider: UserProvider) {
-      
 
   }
 
   ionViewWillLoad() {
     this.trabalho = this.navParams.get('trabalho');
     if (!this.trabalho) {
-      this.trabalho = new Trabalho('', '', '', '');
+      this.trabalho = new Trabalho(0, '', '', '', '');
     }
 
     this.trabalhoForm = this.formBuilder.group({

@@ -228,10 +228,10 @@ var TrabalhoProvider = /** @class */ (function (_super) {
     };
     TrabalhoProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */],
-            __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _b || Object])
     ], TrabalhoProvider);
     return TrabalhoProvider;
+    var _a, _b;
 }(__WEBPACK_IMPORTED_MODULE_0__base_service__["a" /* BaseService */]));
 
 //# sourceMappingURL=trabalho.js.map
@@ -409,7 +409,7 @@ var TrabalhoPage = /** @class */ (function () {
     TrabalhoPage.prototype.ionViewWillLoad = function () {
         this.trabalho = this.navParams.get('trabalho');
         if (!this.trabalho) {
-            this.trabalho = new __WEBPACK_IMPORTED_MODULE_6__models_trabalho_model__["a" /* Trabalho */]('', '', '', '');
+            this.trabalho = new __WEBPACK_IMPORTED_MODULE_6__models_trabalho_model__["a" /* Trabalho */](0, '', '', '', '');
         }
         this.trabalhoForm = this.formBuilder.group({
             titulo: [this.trabalho.titulo, [__WEBPACK_IMPORTED_MODULE_5__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_5__angular_forms__["f" /* Validators */].minLength(3)]],
@@ -496,16 +496,10 @@ var TrabalhoPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["m" /* Component */])({
             selector: 'page-trabalho',template:/*ion-inline-start:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\trabalho\trabalho.html"*/'<!--\n\n  Generated template for the TrabalhoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Trabalho</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="trabalhoForm" (ngSubmit)="onSubmit(); $event.preventDefault()">\n\n\n\n    <ion-item>\n\n      <ion-label floating>Título</ion-label>\n\n      <ion-input type="text" formControlName="titulo"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Descrição</ion-label>\n\n      <ion-input type="text" formControlName="descricao"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Aluno 1</ion-label>\n\n      <ion-input type="text" formControlName="aluno1"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Aluno 2</ion-label>\n\n      <ion-input type="text" formControlName="aluno2"></ion-input>\n\n    </ion-item>\n\n\n\n    <br>\n\n\n\n    <button ion-button full type="submit" [disabled]="trabalhoForm.invalid"> Salvar </button>\n\n\n\n    <button ion-button full type="button" color="danger" *ngIf="trabalho.$key" (click)="delete()"> Excluir </button>\n\n\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\trabalho\trabalho.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */],
-            __WEBPACK_IMPORTED_MODULE_0__providers_trabalho_trabalho__["a" /* TrabalhoProvider */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1__providers_user_user__["a" /* UserProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__providers_trabalho_trabalho__["a" /* TrabalhoProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__providers_trabalho_trabalho__["a" /* TrabalhoProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* LoadingController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__providers_user_user__["a" /* UserProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__providers_user_user__["a" /* UserProvider */]) === "function" && _h || Object])
     ], TrabalhoPage);
     return TrabalhoPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h;
 }());
 
 //# sourceMappingURL=trabalho.js.map
@@ -551,6 +545,8 @@ var SignupPage = /** @class */ (function () {
         this.signupForm = this.formBuilder.group({
             name: ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].minLength(3)]],
             username: ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].minLength(3)]],
+            telefone: ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].minLength(10), __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].maxLength(11)])],
+            cpf: ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].minLength(11), __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].maxLength(11)])],
             email: ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].pattern(emailRegex)])],
             password: ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].minLength(6)]],
         });
@@ -607,17 +603,12 @@ var SignupPage = /** @class */ (function () {
     };
     SignupPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-signup',template:/*ion-inline-start:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\signup\signup.html"*/'<!--\n\n  Generated template for the SignupPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Sign Up</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <h1 text-center>\n\n    <ion-icon class="auth-icon" name="person-add" color="primary"> </ion-icon>\n\n  </h1>\n\n  <form [formGroup]="signupForm" (ngSubmit) = "onSubmit(); $event.preventDefault()">\n\n\n\n    <ion-item>\n\n      <ion-icon name="person" item-left> </ion-icon>\n\n      <ion-input type="text" placeholder="Name" formControlName="name"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n        <ion-icon name="at" item-left> </ion-icon>\n\n        <ion-input type="text" placeholder="Username" formControlName="username"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n        <ion-icon name="mail" item-left> </ion-icon>\n\n        <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n          <ion-icon name="lock" item-left> </ion-icon>\n\n          <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>\n\n        </ion-item>\n\n\n\n        <br>\n\n\n\n        <button ion-button full type="submit" [disabled]="signupForm.invalid"> Create </button>\n\n\n\n  </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\signup\signup.html"*/,
+            selector: 'page-signup',template:/*ion-inline-start:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\signup\signup.html"*/'<!--\n\n  Generated template for the SignupPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Sign Up</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <h1 text-center>\n\n    <ion-icon class="auth-icon" name="person-add" color="primary"> </ion-icon>\n\n  </h1>\n\n  <form [formGroup]="signupForm" (ngSubmit)="onSubmit(); $event.preventDefault()">\n\n\n\n    <ion-item>\n\n      <ion-icon name="person" item-left> </ion-icon>\n\n      <ion-input type="text" placeholder="Name" formControlName="name"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-icon name="at" item-left> </ion-icon>\n\n      <ion-input type="text" placeholder="Username" formControlName="username"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-icon name="contact" item-left> </ion-icon>\n\n      <ion-input type="text" placeholder="Telefone" formControlName="telefone"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-icon name="person" item-left> </ion-icon>\n\n      <ion-input type="text" placeholder="CPF" formControlName="cpf"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-icon name="mail" item-left> </ion-icon>\n\n      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-icon name="lock" item-left> </ion-icon>\n\n      <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>\n\n    </ion-item>\n\n\n\n    <br>\n\n\n\n    <button ion-button full type="submit" [disabled]="signupForm.invalid"> Create </button>\n\n\n\n  </form>\n\n\n\n</ion-content>'/*ion-inline-end:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\signup\signup.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_auth_auth__["a" /* AuthProvider */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_0__providers_user_user__["a" /* UserProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* LoadingController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavParams */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__providers_user_user__["a" /* UserProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__providers_user_user__["a" /* UserProvider */]) === "function" && _g || Object])
     ], SignupPage);
     return SignupPage;
+    var _a, _b, _c, _d, _e, _f, _g;
 }());
 
 //# sourceMappingURL=signup.js.map
@@ -676,9 +667,11 @@ var BaseComponent = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
 var User = /** @class */ (function () {
-    function User(name, username, email, photo) {
+    function User(name, username, telefone, cpf, email, photo) {
         this.name = name;
         this.username = username;
+        this.telefone = telefone;
+        this.cpf = cpf;
         this.email = email;
         this.photo = photo;
     }
@@ -755,6 +748,8 @@ var UserProfilePage = /** @class */ (function () {
             .edit({
             name: this.currentUser.name,
             username: this.currentUser.username,
+            telefone: this.currentUser.telefone,
+            cpf: this.currentUser.cpf,
             photo: photoUrl || this.currentUser.photo || ''
         }).then(function () {
             _this.canEdit = false;
@@ -767,11 +762,12 @@ var UserProfilePage = /** @class */ (function () {
     };
     UserProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-user-profile',template:/*ion-inline-start:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\user-profile\user-profile.html"*/'<ion-header>\n\n\n\n  <custom-logged-header [title]="\'User Profile\'"></custom-logged-header>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <user-info [user]="currentUser"></user-info>\n\n\n\n  <button ion-button block (click)="canEdit = !canEdit">Edit</button>\n\n\n\n  <form (ngSubmit)="onSubmit($event)" *ngIf="canEdit" #profileForm="ngForm">\n\n\n\n    <ion-item>\n\n      <ion-icon name="person" item-start></ion-icon>\n\n      <ion-input type="text" placeholder="Name" name="name" [(ngModel)]="currentUser.name" required minlenght="3">\n\n      </ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-icon name="at" item-start></ion-icon>\n\n      <ion-input type="text" placeholder="Username" name="username" [(ngModel)]="currentUser.username" required minlenght="3">\n\n      </ion-input>\n\n    </ion-item>\n\n\n\n\n\n    <ion-item>\n\n      <input type="file" accept="image/*" (change)="onPhoto($event)">\n\n    </ion-item>\n\n\n\n    <progress-bar *ngIf="uploadProgress" [progress]="uploadProgress"></progress-bar>\n\n\n\n    <br>\n\n    <button ion-button block type="submit" [disabled]="profileForm.form.invalid">Save</button>\n\n\n\n  </form>\n\n\n\n</ion-content>'/*ion-inline-end:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\user-profile\user-profile.html"*/,
+            selector: 'page-user-profile',template:/*ion-inline-start:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\user-profile\user-profile.html"*/'<ion-header>\n\n\n\n  <custom-logged-header [title]="\'User Profile\'"></custom-logged-header>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <user-info [user]="currentUser"></user-info>\n\n\n\n  <button ion-button block (click)="canEdit = !canEdit">Edit</button>\n\n\n\n  <form (ngSubmit)="onSubmit($event)" *ngIf="canEdit" #profileForm="ngForm">\n\n\n\n    <ion-item>\n\n      <ion-icon name="person" item-start></ion-icon>\n\n      <ion-input type="text" placeholder="Name" name="name" [(ngModel)]="currentUser.name" required minlenght="3">\n\n      </ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-icon name="at" item-start></ion-icon>\n\n      <ion-input type="text" placeholder="Username" name="username" [(ngModel)]="currentUser.username" required minlenght="3">\n\n      </ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-icon name="contact" item-start></ion-icon>\n\n    <ion-input type="text" placeholder="Telefone" name="telefone" [(ngModel)]="currentUser.telefone" minlenght="11" maxlenght="11">\n\n      </ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-icon name="person" item-start></ion-icon>\n\n      <ion-input type="text" placeholder="CPF" name="cpf" [(ngModel)]="currentUser.cpf" required minlenght="11" maxlenght="11">\n\n      </ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <input type="file" accept="image/*" (change)="onPhoto($event)">\n\n    </ion-item>\n\n\n\n    <progress-bar *ngIf="uploadProgress" [progress]="uploadProgress"></progress-bar>\n\n\n\n    <br>\n\n    <button ion-button block type="submit" [disabled]="profileForm.form.invalid">Save</button>\n\n\n\n  </form>\n\n\n\n</ion-content>'/*ion-inline-end:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\user-profile\user-profile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__providers_user_user__["a" /* UserProvider */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__providers_user_user__["a" /* UserProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_user_user__["a" /* UserProvider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _d || Object])
     ], UserProfilePage);
     return UserProfilePage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=user-profile.js.map
@@ -1144,7 +1140,8 @@ var MyApp = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Trabalho; });
 var Trabalho = /** @class */ (function () {
-    function Trabalho(titulo, descricao, aluno1, aluno2) {
+    function Trabalho(id, titulo, descricao, aluno1, aluno2) {
+        this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
         this.aluno1 = aluno1;
@@ -1436,15 +1433,12 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\home\home.html"*/'<ion-header>\n\n\n\n  <custom-logged-header [title]="view | capitalize:true"> </custom-logged-header>\n\n\n\n  <ion-toolbar>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <button ion-button (click)="navCtrl.push(trabalhoPage)" full> Adicionar </button>\n\n  <div [ngSwitch]="view">\n\n    <ion-list *ngSwitchCase="\'trabalho\'" no-lines>\n\n      <button ion-item *ngFor="let trabalho of trabalhos | async" (click)="onTrabalhoOpen(trabalho)">\n\n        <h2> {{ trabalho.titulo }} </h2>\n\n      </button>\n\n    </ion-list>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\home\home.html"*/'<ion-header>\n\n\n\n  <custom-logged-header [title]="view | capitalize:true"> </custom-logged-header>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <button ion-button (click)="navCtrl.push(trabalhoPage)" full> Adicionar </button>\n\n  <div [ngSwitch]="view">\n\n    <ion-list *ngSwitchCase="\'trabalho\'" no-lines>\n\n      <button ion-item *ngFor="let trabalho of trabalhos | async" (click)="onTrabalhoOpen(trabalho)">\n\n        <h2> {{ trabalho.titulo }} </h2>\n\n      </button>\n\n    </ion-list>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"F:\Vinicius GitProjetos\Ionic_2-3_with_firebase\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__providers_auth_auth__["a" /* AuthProvider */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1__providers_user_user__["a" /* UserProvider */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* MenuController */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_trabalho_trabalho__["a" /* TrabalhoProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__providers_user_user__["a" /* UserProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__providers_user_user__["a" /* UserProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* MenuController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__providers_trabalho_trabalho__["a" /* TrabalhoProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_trabalho_trabalho__["a" /* TrabalhoProvider */]) === "function" && _e || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=home.js.map

@@ -81,7 +81,7 @@ export class UserProvider extends BaseService{
   }
 
 
-  edit(user: {name: string, username: string, photo: string}): Promise<void> {
+  edit(user: {name: string, username: string, telefone: string, cpf: string, photo: string}): Promise<void> {
     return this.currentUser
       .update(user)
       .catch(this.handlePromiseError);

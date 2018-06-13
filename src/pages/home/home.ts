@@ -18,7 +18,7 @@ import { TrabalhoProvider } from '../../providers/trabalho/trabalho';
 export class HomePage {
   view: string = 'trabalho';
 
-  trabalhos: Observable<Trabalho[]>
+  trabalhos: Observable<Trabalho[]>;
 
   public trabalhoPage = TrabalhoPage;
 

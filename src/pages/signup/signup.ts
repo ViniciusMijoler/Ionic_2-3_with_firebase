@@ -28,6 +28,8 @@ export class SignupPage {
         this.signupForm = this.formBuilder.group({
             name: ['', [Validators.required, Validators.minLength(3)]],
             username: ['', [Validators.required, Validators.minLength(3)]],
+            telefone: ['', Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(11)])],
+            cpf: ['', Validators.compose([Validators.required, Validators.minLength(11), Validators.maxLength(11)])],
             email: ['', Validators.compose([Validators.required, Validators.pattern(emailRegex)])],
             password: ['', [Validators.required, Validators.minLength(6)]],
         });
