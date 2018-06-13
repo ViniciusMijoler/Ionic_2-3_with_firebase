@@ -1,35 +1,18 @@
 <ion-header>
-  
-  <custom-logged-header [title]="view | capitalize:true"> </custom-logged-header>
-  
-  <ion-toolbar>
 
-    <ion-segment [(ngModel)]="view">
-      <ion-segment-button value="chats">
-        Chats
-      </ion-segment-button>
-      <ion-segment-button value="users">
-        Users
-      </ion-segment-button>
-    </ion-segment>
+  <custom-logged-header [title]="view | capitalize:true"> </custom-logged-header>
+
+  <ion-toolbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+    <button ion-button (click)="navCtrl.push(trabalhoPage)" full> Adicionar </button>
   <div [ngSwitch]="view">
-      <ion-list *ngSwitchCase="'chats'" no-lines>
-          <button ion-item *ngFor="let chat of chats | async" (click) = "onChatOpen(chat)"> 
-            <h2> {{ chat.title }}</h2>
-            <p *ngIf="chat.lastMessage"> {{chat.timestamp | date: 'dd/mm/y H:mm'}} - {{chat.lastMessage}}</p>
-            <p *ngIf="!chat.lastMessage"> no messages </p>
-          </button>
-      </ion-list>
-      <ion-list *ngSwitchCase="'users'" no-lines>
-          <button ion-item *ngFor="let user of users | async" (click)="onChatCreate(user)">
-            {{user.name}} - {{user.email}}
-          </button>
-      </ion-list>
+    <ion-list *ngSwitchCase="'trabalho'" no-lines>
+      <button ion-item *ngFor="let trabalho of trabalhos | async" (click)="onTrabalhoOpen(trabalho)">
+        <h2> {{ trabalho.titulo }} </h2>
+      </button>
+    </ion-list>
   </div>
-
 </ion-content>

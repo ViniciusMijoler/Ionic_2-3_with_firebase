@@ -38,7 +38,4 @@ export abstract class BaseService {
           .snapshotChanges()
           .map(action => ({ $key: action.key, ...action.payload.val() }));
     }
-
-    
-
 }

@@ -29,7 +29,7 @@ export class UserProvider extends BaseService{
   }
 
   // recupera a lista de usuários e retira usuário logado
-
+  
   private setUsers(uidToExclude: string): void {
     this.users = this.mapListKeys<User>(
       this.db.list<User>(`/users`, 

@@ -1,5 +1,4 @@
 import { ProgressBarComponent } from './../components/progress-bar/progress-bar';
-import { MessageBoxComponent } from './../components/message-box/message-box';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
@@ -7,7 +6,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import {AngularFireModule, FirebaseAppConfig} from 'angularfire2';
+import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AuthProvider } from '../providers/auth/auth';
@@ -20,13 +19,11 @@ import { SignupPage } from '../pages/signup/signup';
 import { UserProvider } from '../providers/user/user';
 import { CustomLoggedHeaderComponent } from '../components/custom-logged-header/custom-logged-header';
 import { CapitalizePipe } from '../pipes/capitalize/capitalize';
-import { ChatPage } from '../pages/chat/chat';
-import { ChatProvider } from '../providers/chat/chat';
-import { MessageProvider } from '../providers/message/message';
 import { UserInfoComponent } from '../components/user-info/user-info';
 import { UserMenuComponent } from '../components/user-menu/user-menu';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
-
+import { TrabalhoPage } from '../pages/trabalho/trabalho';
+import { TrabalhoProvider } from '../providers/trabalho/trabalho';
 
 const firebaseAppConfig: FirebaseAppConfig = {
   apiKey: "AIzaSyBGLJ3ORodAvuGaDGDYZ9m_2j5HZIIxQ8w",
@@ -39,10 +36,8 @@ const firebaseAppConfig: FirebaseAppConfig = {
 
 @NgModule({
   declarations: [
-    ChatPage,
     CapitalizePipe,
     CustomLoggedHeaderComponent,
-    MessageBoxComponent,
     MyApp,
     HomePage,
     SignupPage,
@@ -50,7 +45,8 @@ const firebaseAppConfig: FirebaseAppConfig = {
     UserInfoComponent,
     UserMenuComponent,
     UserProfilePage,
-    ProgressBarComponent
+    ProgressBarComponent,
+    TrabalhoPage
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseAppConfig),
@@ -59,24 +55,23 @@ const firebaseAppConfig: FirebaseAppConfig = {
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp)
-   ],
+  ],
   bootstrap: [IonicApp],
   entryComponents: [
-    ChatPage,
     MyApp,
     HomePage,
     SignupPage,
     SigninPage,
-    UserProfilePage
+    UserProfilePage,
+    TrabalhoPage
   ],
   providers: [
     AuthProvider,
-    ChatProvider,
     StatusBar,
     SplashScreen,
     UserProvider,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MessageProvider
+    TrabalhoProvider,
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

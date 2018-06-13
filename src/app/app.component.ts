@@ -16,7 +16,6 @@ export class MyApp {
   rootPage:any = SigninPage;
   currentUser: User;
   
-
   constructor(authProvider: AuthProvider, 
               platform: Platform, 
               statusBar: StatusBar, 

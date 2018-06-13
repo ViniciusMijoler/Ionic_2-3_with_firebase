@@ -1,0 +1,12 @@
+export class Trabalho {
+
+    public $key: string;
+
+    constructor(
+        public titulo: string,
+        public descricao: string,
+        public aluno1: string,
+        public aluno2: string
+    ) {}
+
+}
